@@ -11,7 +11,6 @@
         <div class="row">
             <div class="col">
             <h1>Bootstrap</h1>
-            <h1>Kurnia</h1>
             <p class="lead">This is a demo of Bootstrap 5.</p>
             </div>
         </div>
