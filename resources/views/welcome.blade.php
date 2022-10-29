@@ -13,7 +13,7 @@
 
             <h1>Elektronik SKP</h1>
 
-            <p class="lead">This is a demo of Bootstrap 5.</p>
+            <p class="lead">Tes Tugas UTS</p>
             </div>
         </div>
     </div>
