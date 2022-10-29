@@ -10,7 +10,9 @@
     <div class="container">
         <div class="row">
             <div class="col">
+
             <h1>Bootstrap Demo</h1>
+
             <p class="lead">This is a demo of Bootstrap 5.</p>
             </div>
         </div>
