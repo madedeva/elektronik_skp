@@ -23,7 +23,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
         aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-cog"></i>
+        <i class="fas fa-fw fa-globe"></i>
         <span>Layanan</span>
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -31,7 +31,7 @@
             <h6 class="collapse-header">Pilih layanan</h6>
             <a class="collapse-item" href="/mahasiswa">Tambah mahasiswa</a>
             <a class="collapse-item" href="/poin">Tambahkan poin</a>
-            <a class="collapse-item" href="/kegiatan">Kegiatan</a>
+            <a class="collapse-item" href="/kegiatan">Tambah Kegiatan</a>
         </div>
     </div>
 </li>
@@ -43,13 +43,19 @@
         <span>Data Mahasiswa</span></a>
 </li>
 
+<li class="nav-item">
+    <a class="nav-link" href="/kegiatanmahasiswa">
+        <i class="fas fa-fw fa-calendar"></i>
+        <span>Data Kegiatan</span></a>
+</li>
+
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
 
 <!-- about -->
 <li class="nav-item">
     <a class="nav-link" href="/about">
-    <i class="bi bi-info-circle-fill"></i>
+        <i class="fas fa-fw fa-info-circle"></i>
         <span>About</span></a>
 </li>
 

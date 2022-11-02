@@ -2,8 +2,6 @@
 
 @section('container')
 
-<div class="container">
-    <h1>Poin</h1>
-</div>
+<!-- form tambah poin -->
 
 @endsection

@@ -42,3 +42,13 @@ Route::get('/kegiatan', function () {
         'title' => 'Kegiatan',
     ]);
 });
+
+Route::get('/kegiatanmahasiswa', function () {
+    return view('kegiatanaktif',[
+        'title' => 'Poin Mahasiswa',
+    ]);
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
