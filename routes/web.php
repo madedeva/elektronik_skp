@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,11 +32,11 @@ Route::get('/poin', function () {
     ]);
 });
 
-Route::get('/data', function () {
-    return view('mahasiswaktif',[
-        'title' => 'Data Mahasiswa',
-    ]);
-});
+// Route::get('/data', function () {
+//     return view('mahasiswaktif',[
+//         'title' => 'Data Mahasiswa',
+//     ]);
+// });
 
 Route::get('/kegiatan', function () {
     return view('kegiatan',[
@@ -51,4 +52,10 @@ Route::get('/kegiatanmahasiswa', function () {
 
 Route::get('/login', function () {
     return view('login');
-});
+}); 
+
+Route::get('/data', [UserController::class, 'index']);
+Route::get('/data/delete/{id}', [UserController::class, 'delete']);
+Route::get('/data/update/{id}', [UserController::class, 'update']);
+
+Route::resource('/data', UserController::class);

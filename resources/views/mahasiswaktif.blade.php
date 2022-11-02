@@ -16,6 +16,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>Id</th>
                                             <th>Nama</th>
                                             <th>Email</th>
                                             <th>NIM</th>
@@ -27,24 +28,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($users as $user)
+                                        @foreach ($users as $mahasiswa)
                                         <tr>
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ $user->email }}</td>
-                                            <td>{{ $user->nim }}</td>
-                                            <td>{{ $user->prodi }}</td>
-                                            <td>{{ $user->jurusan }}</td>
-                                            <td>{{ $user->alamat }}</td>
+                                            <td>{{ $mahasiswa->id }}</td>
+                                            <td>{{ $mahasiswa->name }}</td>
+                                            <td>{{ $mahasiswa->email }}</td>
+                                            <td>{{ $mahasiswa->student_id }}</td>
+                                            <td>{{ $mahasiswa->study_program }}</td>
+                                            <td>{{ $mahasiswa->major }}</td>
+                                            <td>{{ $mahasiswa->address }}</td>
                                             <td>0</td>
                                             <td>
                                                 <a href="" class="badge badge-success">Edit</a>
-                                                <a href="" class="badge badge-danger">Delete</a>
+                                                @csrf
+                                                @method('DELETE')
+                                                <a href="/data/delete/{{ $mahasiswa->id }}" class="badge badge-danger">Delete</a>
                                             </td>
 
                                         </tr>
-                                    @endforeach
+                                        @endforeach
                                     </tbody>
-                                </table>
+                                </table>     
                             </div>
                         </div>
                     </div>

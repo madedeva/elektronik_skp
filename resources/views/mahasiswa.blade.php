@@ -8,48 +8,44 @@
     <div class="row">
         <div class="col-8">
             <h1 class="mt-3">Tambah Data Mahasiswa</h1>
-            <form method="post" action="/mahasiswa">
-                @csrf
-                <div class="form-group
-                @error('nama') has-danger @enderror">
+            <form method="post" action="{{ url('mahasiswa') }}">
+                {!! csrf_field() !!}
+                <!-- name -->
+                <div class="form-group">
                     <label for="nama">Nama</label>
-                    <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" placeholder="Masukkan Nama" name="nama" value="{{ old('nama') }}">
-                    @error('nama')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+                    <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama" name="nama">
                 </div>
-                <div class="form-group
-                @error('nim') has-danger @enderror">
-                    <label for="nim">NIM</label>
-                    <input type="text" class="form-control @error('nim') is-invalid @enderror" id="nim" placeholder="Masukkan NIM" name="nim" value="{{ old('nim') }}">
-                    @error('nim')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+                <!-- email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="Masukkan Email" name="email">
                 </div>
-                <div class="form-group
-                @error('prodi') has-danger @enderror">
-                    <label for="prodi">Prodi</label>
-                    <input type="text" class="form-control @error('prodi') is-invalid @enderror" id="prodi" placeholder="Masukkan Prodi" name="prodi" value="{{ old('prodi') }}">
-                    @error('prodi')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+                <!-- student id -->
+                <div class="form-group">
+                    <label for="student_id">Student ID</label>
+                    <input type="text" class="form-control" id="student_id" placeholder="Masukkan Student ID" name="student_id">
                 </div>
-                <div class="form-group
-                @error('jurusan') has-danger @enderror">
-                    <label for="jurusan">Jurusan</label>
-                    <input type="text" class="form-control @error('jurusan') is-invalid @enderror" id="jurusan" placeholder="Masukkan Jurusan" name="jurusan" value="{{ old('jurusan') }}">
-                    @error('jurusan')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+                <!-- study program -->
+                <div class="form-group">
+                    <label for="study_program">Study Program</label>
+                    <input type="text" class="form-control" id="study_program" placeholder="Masukkan Study Program" name="study_program">
                 </div>
-                <div class="form-group
-                @error('alamat') has-danger @enderror">
-                    <label for="alamat">Alamat</label>
-                    <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="alamat" placeholder="Masukkan Alamat" name="alamat" value="{{ old('alamat') }}">
-                    @error('alamat')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+                <!-- major -->
+                <div class="form-group">
+                    <label for="major">Major</label>
+                    <input type="text" class="form-control" id="major" placeholder="Masukkan Major" name="major">
                 </div>
+                <!-- address -->
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="Masukkan Address" name="address">
+                </div>
+                <!-- password -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Masukkan Password" name="password">
+                </div>
+                <!-- tambah data -->
                 <button type="submit" class="btn btn-primary">Tambah Data</button>
             </form>
             <br>
