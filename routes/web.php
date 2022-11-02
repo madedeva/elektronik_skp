@@ -14,5 +14,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dahsboard', [
+        'title' => 'Dashboard',
+    ]);
+});
+
+Route::get('/mahasiswa', function () {
+    return view('mahasiswa',[
+        'title' => 'Tambah Mahasiswa',
+    ]);
+});
+
+Route::get('/poin', function () {
+    return view('poin',[
+        'title' => 'Tambah Poin',
+    ]);
+});
+
+Route::get('/data', function () {
+    return view('mahasiswaktif',[
+        'title' => 'Data Mahasiswa',
+    ]);
+});
+
+Route::get('/kegiatan', function () {
+    return view('kegiatan',[
+        'title' => 'Kegiatan',
+    ]);
 });
