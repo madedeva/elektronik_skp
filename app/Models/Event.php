@@ -5,19 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Mahasiswa extends Model
+class Event extends Model
 {
     use HasFactory;
 
-    protected $table = 'users';
+    protected $table = 'events';
     protected $primaryKey = 'id';
+
     protected $fillable = [
         'name',
-        'email',
-        'student_id',
-        'study_program',
-        'major',
-        'address',
-        'password',
+        'description',
+        'location',
+        'point',
     ];
 }

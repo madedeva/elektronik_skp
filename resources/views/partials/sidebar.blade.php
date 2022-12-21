@@ -19,34 +19,24 @@
 <!-- Divider -->
 <hr class="sidebar-divider">
 
-<!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-        aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-globe"></i>
-        <span>Layanan</span>
-    </a>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Pilih layanan</h6>
-            <a class="collapse-item" href="/mahasiswa">Tambah mahasiswa</a>
-            <a class="collapse-item" href="/poin">Tambahkan poin</a>
-            <a class="collapse-item" href="/kegiatan">Tambah Kegiatan</a>
-        </div>
-    </div>
-</li>
-
 <!-- Nav Item - Tables -->
-<li class="nav-item">
-    <a class="nav-link" href="/data">
+<li class="nav-item {{ Request::is('mahasiswa') ? 'active' : '' }}">
+    <a class="nav-link" href="/mahasiswa">
         <i class="fas fa-fw fa-table"></i>
         <span>Data Mahasiswa</span></a>
 </li>
 
-<li class="nav-item">
-    <a class="nav-link" href="/kegiatanmahasiswa">
+<li class="nav-item {{ Request::is('event') ? 'active' : '' }}">
+    <a class="nav-link" href="/event">
         <i class="fas fa-fw fa-calendar"></i>
         <span>Data Kegiatan</span></a>
+</li>
+
+<!-- rekap poin -->
+<li class="nav-item {{ Request::is('poin') ? 'active' : '' }}">
+    <a class="nav-link" href="/poin">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Rekap Poin</span></a>
 </li>
 
 <!-- Divider -->

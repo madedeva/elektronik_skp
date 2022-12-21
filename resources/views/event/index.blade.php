@@ -4,18 +4,22 @@
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Kegiatan Aktif</h1>
-                    <p class="mb-4">Berikut merupakan data kegiatan aktif di lingkungan Fakultas Teknik dan Kejuruan.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Data Kegiatan</h6>
                         </div>
+                        <!-- tambah kegiatan -->
+                        <div class="card-body">
+                            <a href="/event/create" class="btn btn-primary">Tambah Data Kegiatan</a>
+                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>No</th>
                                             <th>Nama Kegiatan</th>
                                             <th>Tanggal</th>
                                             <th>Tempat</th>
@@ -26,14 +30,20 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Pembukaan Dies Natalis</td>
-                                            <td>3 Januari 2023</td>
-                                            <td>Lapangan Kampus Tengah Undiksha</td>
-                                            <td>Kegiatan wajib dihadiri oleh seluruh mahasiswa</td>
-                                            <td>10</td>
+                                            @foreach ($event as $events)
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $events->name }}</td>
+                                            <td>{{ $events->date }}</td>
+                                            <td>{{ $events->location }}</td>
+                                            <td>{{ $events->description }}</td>
+                                            <td>{{ $events->point }}</td>
                                             <td>
                                                 <a href="" class="badge badge-success">Edit</a>
+                                                @csrf
+                                                @method('DELETE')
                                                 <a href="" class="badge badge-danger">Delete</a>
+                                            </td>
+                                            @endforeach
                                         </tr>
                                     </tbody>
                                 </table>

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\PoinController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,48 +16,23 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('dahsboard', [
-        'title' => 'Dashboard',
-    ]);
+
+Route::get('/', [UserController::class, 'dashboard'])->name('dashboard');
+
+Route::prefix('mahasiswa') -> group(function(){
+    Route::get('/', [UserController::class, 'index'])->name('mahasiswa.index');
+    Route::get('/create', [UserController::class, 'create'])->name('mahasiswa.create');
+    Route::post('/store', [UserController::class, 'store'])->name('mahasiswa.store');
 });
 
-Route::get('/mahasiswa', function () {
-    return view('mahasiswa',[
-        'title' => 'Tambah Mahasiswa',
-    ]);
+Route::prefix('event') -> group(function(){
+    Route::get('/', [EventController::class, 'index'])->name('event.index');
+    Route::get('/create', [EventController::class, 'create'])->name('event.create');
+    Route::post('/store', [EventController::class, 'store'])->name('event.store');
 });
 
-Route::get('/poin', function () {
-    return view('poin',[
-        'title' => 'Tambah Poin',
-    ]);
+Route::prefix('poin') -> group(function(){
+    Route::get('/', [PoinController::class, 'index'])->name('poin.index');
+    Route::get('/create', [PoinController::class, 'create'])->name('poin.create');
+    Route::post('/store', [PoinController::class, 'store'])->name('poin.store');
 });
-
-// Route::get('/data', function () {
-//     return view('mahasiswaktif',[
-//         'title' => 'Data Mahasiswa',
-//     ]);
-// });
-
-Route::get('/kegiatan', function () {
-    return view('kegiatan',[
-        'title' => 'Kegiatan',
-    ]);
-});
-
-Route::get('/kegiatanmahasiswa', function () {
-    return view('kegiatanaktif',[
-        'title' => 'Poin Mahasiswa',
-    ]);
-});
-
-Route::get('/login', function () {
-    return view('login');
-}); 
-
-Route::get('/data', [UserController::class, 'index']);
-Route::get('/data/delete/{id}', [UserController::class, 'delete']);
-Route::get('/data/update/{id}', [UserController::class, 'update']);
-
-Route::resource('/data', UserController::class);
