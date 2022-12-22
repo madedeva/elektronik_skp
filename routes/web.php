@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PoinController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +17,16 @@ use App\Http\Controllers\PoinController;
 |
 */
 
-
-Route::get('/', [UserController::class, 'dashboard'])->name('dashboard');
+Route::get('/', function () {
+    return view('index');
+});
+Route::get('/home', [StudentController::class, 'dashboard'])->name('dashboard');
 
 Route::prefix('mahasiswa') -> group(function(){
-    Route::get('/', [UserController::class, 'index'])->name('mahasiswa.index');
-    Route::get('/create', [UserController::class, 'create'])->name('mahasiswa.create');
-    Route::post('/store', [UserController::class, 'store'])->name('mahasiswa.store');
+    Route::get('/', [StudentController::class, 'index'])->name('mahasiswa.index');
+    Route::get('/create', [StudentController::class, 'create'])->name('mahasiswa.create');
+    Route::post('/store', [StudentController::class, 'store'])->name('mahasiswa.store');
+    Route::get('/{user}', [StudentController::class, 'show'])->name('poin.create');
 });
 
 Route::prefix('event') -> group(function(){

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Point;
+use App\Models\Student;
 
-class PoinController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class PoinController extends Controller
      */
     public function index()
     {
-        //get points data from points table;
-        $poin = Point::all();
-        return view('poin.create', compact('poin'));
+        $mahasiswa = Student::all();
+        return view('mahasiswa.index', ['mahasiswa' => $mahasiswa]);
     }
 
     /**
@@ -26,7 +25,7 @@ class PoinController extends Controller
      */
     public function create()
     {
-        //
+        return view('mahasiswa.create');
     }
 
     /**
@@ -36,7 +35,19 @@ class PoinController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'student_id' => 'required',
+            'study_program' => 'required',
+            'major' => 'required',
+            'address' => 'required',
+        ]);
+
+        $mahasiswa = Student::get();
+
+        return view ('mahasiswa.index', ['mahasiswa' => $mahasiswa]);
     }
 
     /**
@@ -47,7 +58,8 @@ class PoinController extends Controller
      */
     public function show($id)
     {
-        //
+        $mahasiswa = Student::find($id);
+        return view('mahasiswa.show', ['mahasiswa' => $mahasiswa]);
     }
 
     /**
@@ -82,5 +94,13 @@ class PoinController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function dashboard() {
+
+        $jumlah = Student::count();
+
+        return view('home', compact('jumlah'));
+
     }
 }

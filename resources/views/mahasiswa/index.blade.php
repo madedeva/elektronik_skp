@@ -36,6 +36,8 @@
                                             <td>{{ $user->study_program }}</td>
                                             <td>{{ $user->major }}</td>
                                             <td>
+                                                <!-- show mahasiswa with route -->
+                                                <a href="/mahasiswa/{{ $user->id }}" class="badge badge-info">Detail</a>
                                                 <a href="" class="badge badge-success">Edit</a>
                                                 @csrf
                                                 @method('DELETE')

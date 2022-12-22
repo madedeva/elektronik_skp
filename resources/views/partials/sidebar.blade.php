@@ -2,8 +2,8 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-    <div class="sidebar-brand-text mx-3">Administrator</div>
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/home">
+    <div class="sidebar-brand-text mx-3">E-SKP UNDIKSHA</div>
 </a>
 
 <!-- Divider -->
@@ -11,7 +11,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
-    <a class="nav-link" href="/">
+    <a class="nav-link" href="/home">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
 </li>

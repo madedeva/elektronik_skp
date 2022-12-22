@@ -19,32 +19,32 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Nama Kegiatan</th>
-                                            <th>Tanggal</th>
-                                            <th>Tempat</th>
-                                            <th>Deskripsi</th>
-                                            <th>Poin yang diperoleh</th>
+                                            <th>#</th>
+                                            <th>Kegiatan</th>
+                                            <th>Tanggal Kegiatan</th>
+                                            <th>Lokasi</th>
+                                            <th>Point</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($event as $events)
                                         <tr>
-                                            @foreach ($event as $events)
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $events->name }}</td>
                                             <td>{{ $events->date }}</td>
                                             <td>{{ $events->location }}</td>
-                                            <td>{{ $events->description }}</td>
                                             <td>{{ $events->point }}</td>
                                             <td>
-                                                <a href="" class="badge badge-success">Edit</a>
-                                                @csrf
-                                                @method('DELETE')
-                                                <a href="" class="badge badge-danger">Delete</a>
-                                            </td>
-                                            @endforeach
+                                                <a href="/event/{{ $events->id }}" class="badge badge-info">Detail</a>
+                                                <a href="/event/{{ $events->id }}/edit" class="badge badge-success">Edit</a>
+                                                <form action="/event/{{ $events->id }}" method="post" class="d-inline">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button type="submit" class="badge bg-danger text-white border-0" onclick="return confirm('Apakah anda yakin?')">Delete</button>
+                                                </form>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

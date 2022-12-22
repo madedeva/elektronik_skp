@@ -10,8 +10,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $mahasiswa = User::all();
-        return view('mahasiswa.index', ['mahasiswa' => $mahasiswa]);
+        //
     }
 
     public function create()
@@ -21,18 +20,7 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'student_id' => 'required',
-            'study_program' => 'required',
-            'major' => 'required',
-            'address' => 'required',
-        ]);
-
-        User::create($request->all());
-
-        return redirect('mahasiswa.index')->with('status', 'Data Mahasiswa Berhasil Ditambahkan!');
+        //
     }
 
     public function show(User $user)
@@ -52,16 +40,6 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        $mahasiswa = User::find($id);
-        $mahasiswa->delete();
-        return redirect('mahasiswa.index')->with('status', 'Data Mahasiswa Berhasil Dihapus!');
-    }
-
-    public function dashboard() {
-
-        $jumlah = User::count();
-
-        return view('index', compact('jumlah'));
-
+        //
     }
 }
