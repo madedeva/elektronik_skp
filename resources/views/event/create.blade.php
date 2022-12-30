@@ -2,14 +2,12 @@
 
 @section('container')
 
-<!-- data kegiata mahasiswa -->
 <div class="card shadow mb-4">
-<div class="container">
-    <div class="row">
-        <div class="col-8">
-            <h1 class="mt-3">Data
-                Kegiatan</h1>
-            <form method="post" action="/kegiatan">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Tambah Data Kegiatan</h6>
+    </div>
+<div class="card-body">
+            <form method="post" action="{{ route('event.store') }}">
                 @csrf
                 <div class="form-group
                 @error('nama') has-danger @enderror">
@@ -53,9 +51,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Tambah Data</button>
             </form>
-            <br>
-        </div>
-    </div>
-</div>
+ </div>
+
 
 @endsection

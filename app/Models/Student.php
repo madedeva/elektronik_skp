@@ -9,12 +9,19 @@ class Student extends Model
 {
     use HasFactory;
 
+    protected $table = 'students';
+    protected $primaryKey = 'id';
+
     protected $fillable = [
-        'name',
+        // nama
+        'nim',
+        'nama',
         'email',
-        'student_id',
-        'study_program',
-        'major',
-        'address',
+        'jurusan_id',
+        'prodi_id',
     ];
+
+    public function pencatatan(){
+        return $this->hasMany(Pencatatan::class);
+    }
 }

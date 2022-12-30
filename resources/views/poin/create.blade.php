@@ -3,8 +3,6 @@
 @section('container')
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Mahasiswa Aktif</h1>
-
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -25,23 +23,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($poin as $poins)
                                         <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $poins->name }}</td>
-                                            <td>{{ $poins->nim }}</td>
-                                            <td>{{ $poins->prodi }}</td>
-                                            <td>{{ $poins->point }}</td>
-                                            <td>
-                                                <a href="/poin/{{ $poins->id }}" class="badge badge-info">Detail</a>
-                                                <a href="/poin/{{ $poins->id }}/edit" class="badge badge-success">Edit</a>
-                                                <form action="/poin/{{ $poins->id }}" method="post" class="d-inline">
-                                                    @method('delete')
-                                                    @csrf
-                                                    <button type="submit" class="badge bg-danger text-white border-0" onclick="return confirm('Apakah anda yakin?')">Delete</button>
-                                                </form>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
-                                        @endforeach
                                 </table>     
                             </div>
                         </div>

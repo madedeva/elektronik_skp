@@ -3,8 +3,6 @@
 @section('container')
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Tambah Mahasiswa</h1>
-
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -19,23 +17,28 @@
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email" placeholder="Masukkan Email" name="email">
+                                <input type="text" class="form-control" id="email" placeholder="Gunakan email undiksha" name="email">
                             </div>
                             <div class="form-group">
-                                <label for="student_id">Student ID</label>
-                                <input type="text" class="form-control" id="student_id" placeholder="Masukkan Student ID" name="student_id">
+                                <label for="student_id">NIM</label>
+                                <input type="text" class="form-control" id="student_id" placeholder="Masukkan NIM" name="student_id">
                             </div>
                             <div class="form-group">
-                                <label for="study_program">Study Program</label>
-                                <input type="text" class="form-control" id="study_program" placeholder="Masukkan Study Program" name="study_program">
+                                <label for="study_program">Program Studi</label>
+                                <input type="text" class="form-control" id="study_program" placeholder="contoh: Pendidikan Teknik Informatika" name="study_program">
                             </div>
                             <div class="form-group">
-                                <label for="major">Major</label>
-                                <input type="text" class="form-control" id="major" placeholder="Masukkan Major" name="major">
+                                <label for="major">Jurusan</label>
+                                <!-- dropdown input -->
+                                <select class="form-control" id="major" name="major">
+                                    <option value="Teknik Informatika">------ Pilih jurusan -----</option>
+                                    <option value="Teknik Informatika">Teknik Informatika</option>
+                                    <option value="Teknik Industri">Teknologi Industri</option>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="address">Address</label>
-                                <input type="text" class="form-control" id="address" placeholder="Masukkan Address" name="address">
+                                <label for="address">Alamat</label>
+                                <input type="text" class="form-control" id="address" placeholder="contoh: Jalan Udayana No. 12, Banyuasri" name="address">
                             </div>
                             <button type="submit" class="btn btn-primary">Tambah Data</button>
                         </form>

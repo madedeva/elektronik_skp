@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use DB;
 
 class StudentController extends Controller
 {
@@ -36,18 +37,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {   
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'student_id' => 'required',
-            'study_program' => 'required',
-            'major' => 'required',
-            'address' => 'required',
-        ]);
 
-        $mahasiswa = Student::get();
-
-        return view ('mahasiswa.index', ['mahasiswa' => $mahasiswa]);
     }
 
     /**
@@ -93,7 +83,9 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mahasiswa = Student::find($id);
+        $mahasiswa->delete();
+        return redirect('/mahasiswa')->with('status', 'Data Mahasiswa Berhasil Dihapus!');
     }
 
     public function dashboard() {

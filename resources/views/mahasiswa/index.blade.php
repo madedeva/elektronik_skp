@@ -3,8 +3,6 @@
 @section('container')
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Mahasiswa Aktif</h1>
-
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -39,9 +37,12 @@
                                                 <!-- show mahasiswa with route -->
                                                 <a href="/mahasiswa/{{ $user->id }}" class="badge badge-info">Detail</a>
                                                 <a href="" class="badge badge-success">Edit</a>
-                                                @csrf
-                                                @method('DELETE')
-                                                <a href="" class="badge badge-danger">Delete</a>
+                                                <!-- delete method -->
+                                                <form action="/mahasiswa/{{ $user->id }}" method="post" class="d-inline">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button type="submit" class="badge badge-danger border-0" onclick="return confirm('Apakah anda yakin?')">Delete</button>
+                                                </form> 
                                             </td>
 
                                         </tr>

@@ -20,20 +20,20 @@
 <hr class="sidebar-divider">
 
 <!-- Nav Item - Tables -->
-<li class="nav-item {{ Request::is('mahasiswa') ? 'active' : '' }}">
+<li class="nav-item {{ Request::is('mahasiswa*') ? 'active' : '' }}">
     <a class="nav-link" href="/mahasiswa">
         <i class="fas fa-fw fa-table"></i>
         <span>Data Mahasiswa</span></a>
 </li>
 
-<li class="nav-item {{ Request::is('event') ? 'active' : '' }}">
+<li class="nav-item {{ Request::is('event*') ? 'active' : '' }}">
     <a class="nav-link" href="/event">
         <i class="fas fa-fw fa-calendar"></i>
         <span>Data Kegiatan</span></a>
 </li>
 
 <!-- rekap poin -->
-<li class="nav-item {{ Request::is('poin') ? 'active' : '' }}">
+<li class="nav-item {{ Request::is('poin*') ? 'active' : '' }}">
     <a class="nav-link" href="/poin">
         <i class="fas fa-fw fa-chart-area"></i>
         <span>Rekap Poin</span></a>

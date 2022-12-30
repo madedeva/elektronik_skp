@@ -3,8 +3,6 @@
 @section('container')
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Kegiatan Aktif</h1>
-
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -28,23 +26,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($event as $events)
                                         <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $events->name }}</td>
-                                            <td>{{ $events->date }}</td>
-                                            <td>{{ $events->location }}</td>
-                                            <td>{{ $events->point }}</td>
-                                            <td>
-                                                <a href="/event/{{ $events->id }}" class="badge badge-info">Detail</a>
-                                                <a href="/event/{{ $events->id }}/edit" class="badge badge-success">Edit</a>
-                                                <form action="/event/{{ $events->id }}" method="post" class="d-inline">
-                                                    @method('delete')
-                                                    @csrf
-                                                    <button type="submit" class="badge bg-danger text-white border-0" onclick="return confirm('Apakah anda yakin?')">Delete</button>
-                                                </form>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
-                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

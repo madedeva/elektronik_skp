@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Event;
 
-class EventController extends Controller
+class KegiatanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $event = Event::all();
-        return view('event.index', ['event' => $event]);
+        
     }
 
     /**
@@ -25,7 +23,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('event.create');
+        //
     }
 
     /**
@@ -36,17 +34,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'date' => 'required',
-            'time' => 'required',
-            'location' => 'required',
-            'description' => 'required',
-        ]);
-
-        Event::create($request->all());
-
-        return redirect('event.index')->with('status', 'Data Event Berhasil Ditambahkan!');
+        //
     }
 
     /**
@@ -57,6 +45,7 @@ class EventController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**
@@ -67,7 +56,7 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        
+        //
     }
 
     /**

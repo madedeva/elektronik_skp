@@ -27,12 +27,14 @@ Route::prefix('mahasiswa') -> group(function(){
     Route::get('/create', [StudentController::class, 'create'])->name('mahasiswa.create');
     Route::post('/store', [StudentController::class, 'store'])->name('mahasiswa.store');
     Route::get('/{user}', [StudentController::class, 'show'])->name('poin.create');
+    Route::delete('/{user}', [StudentController::class, 'destroy'])->name('mahasiswa.destroy');
 });
 
 Route::prefix('event') -> group(function(){
     Route::get('/', [EventController::class, 'index'])->name('event.index');
     Route::get('/create', [EventController::class, 'create'])->name('event.create');
     Route::post('/store', [EventController::class, 'store'])->name('event.store');
+    Route::delete('/{event}', [EventController::class, 'destroy'])->name('event.destroy');
 });
 
 Route::prefix('poin') -> group(function(){
